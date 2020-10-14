@@ -51,7 +51,7 @@ models_urls = {
     "50_imagenet": "https://download.pytorch.org/models/resnet50-19c8e357.pth",
     "101_imagenet": "https://download.pytorch.org/models/resnet101-5d3b4d8f.pth",
     "152_imagenet": "https://download.pytorch.org/models/resnet152-b121ed2d.pth",
-    "152_ear": "https://doc-04-7o-docs.googleusercontent.com/docs/securesc/f9j4051ugplnjbgvfi5j3mkh61465tce/1p7orig0rafl5ilqqncg1hiehc535ohk/1602690675000/05502660253536824070/05502660253536824070/149vVxLrMj1iAlv_kK2s6mwCQRSWEO9v6?e=download&authuser=0",
+    "152_ear": "https://drive.google.com/u/0/uc?export=download&confirm=iiR9&id=149vVxLrMj1iAlv_kK2s6mwCQRSWEO9v6",
 }
 
 stages_suffixes = {0: "_conv", 1: "_conv_relu_varout_dimred"}
