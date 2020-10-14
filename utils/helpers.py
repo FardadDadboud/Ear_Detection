@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-import glob
+import gdown
 
 IMG_SCALE = 1.0 / 255
 IMG_MEAN = np.array([0.435, 0.390, 0.383]).reshape((1, 1, 3))
@@ -22,9 +22,10 @@ def maybe_download(model_name, model_url, model_dir=None, map_location=None):
     if not os.path.exists(cached_file):
         url = model_url
         sys.stderr.write('Downloading: "{}" to {}\n'.format(url, cached_file))
-        urllib.request.urlretrieve(url, cached_file)
-    print("ok: ", cached_file, map_location)
-    print(glob.glob('/root/.torch/models/*.tar'))
+        if filename == 'rf_lw152_ear.pth.tar':
+            gdown.download(url, cached_file, quiet=False)
+        else:    
+            urllib.request.urlretrieve(url, cached_file)
     return torch.load(cached_file, map_location=map_location)
 
 
