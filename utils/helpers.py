@@ -24,7 +24,7 @@ def maybe_download(model_name, model_url, model_dir=None, map_location=None):
         sys.stderr.write('Downloading: "{}" to {}\n'.format(url, cached_file))
         urllib.request.urlretrieve(url, cached_file)
     print("ok: ", cached_file, map_location)
-    print(glob.glob(model_dir))
+    print(glob.glob('/root/.torch/models/'))
     return torch.load(cached_file, map_location=map_location)
 
 
