@@ -51,7 +51,7 @@ models_urls = {
     "50_imagenet": "https://download.pytorch.org/models/resnet50-19c8e357.pth",
     "101_imagenet": "https://download.pytorch.org/models/resnet101-5d3b4d8f.pth",
     "152_imagenet": "https://download.pytorch.org/models/resnet152-b121ed2d.pth",
-    "152_ear": "/content/drive/My Drive/light-weight-refinenet-master/checkpoints/checkpoint.pth.tar",
+    "152_ear": "https://drive.google.com/file/d/149vVxLrMj1iAlv_kK2s6mwCQRSWEO9v6/view?usp=sharing",
 }
 
 stages_suffixes = {0: "_conv", 1: "_conv_relu_varout_dimred"}
@@ -285,7 +285,7 @@ def rf_lw152(num_classes, imagenet=False, pretrained=True, **kwargs):
             url = models_urls[bname]
             print(url)
             if bname == "152_ear":
-              X = torch.load(url)
+              X = maybe_download(key, url)
               new_state_dict = dict()
               for k, v in X['model'].items():
                 name = k[7:] # remove `module.`
